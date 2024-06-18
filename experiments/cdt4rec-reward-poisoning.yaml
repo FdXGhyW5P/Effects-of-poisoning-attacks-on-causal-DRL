@@ -1,0 +1,77 @@
+descr: 'Reward poisoning on cdt4rec, exclusing ClusterRewardInvId'
+devices:
+- cuda:4
+- cuda:5
+- cuda:6
+hyper_params:
+  causal: true
+  K: 2
+  activation_function: relu
+  batch_size: 64
+  ctr_interval: 10
+  dataset: medium
+  dropout: 0.1
+  embed_dim: 128
+  env: TB
+  learning_rate: 1e-4
+  max_iters: 10
+  max_trajectories: 10000
+  mode: normal
+  model_type: cdt
+  n_head: 1
+  n_layer: 3
+  num_eval_episodes: 100
+  num_steps_per_iter: 10000
+  pct_traj: 1.0
+  warmup_steps: 10000
+  weight_decay: 1e-4
+model: cdt4rec
+name: cdt4rec reward poisoning experiments
+notify: finished
+overprovision: 3
+poison_rates:
+- 1.0
+- 5.0
+- 10.0
+- 20.0
+- 30.0
+- 40.0
+process_ids:
+- 156503
+- 420314
+- 946060
+- 702403
+- 485727
+- 749581
+- 883595
+- 660321
+- 937244
+- 463790
+- 794672
+- 778481
+- 627124
+- 106767
+- 697405
+- 963087
+- 982382
+- 737741
+- 232217
+- 150320
+- 192939
+- 640137
+- 549324
+- 648861
+- 672126
+- 130251
+- 294707
+- 218682
+- 631800
+- 640347
+- 642113
+triggers:
+- stateRewardInvId
+- rewardInvId
+- rewardInv
+- reward10
+- reward0
+- clean
